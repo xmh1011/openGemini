@@ -44,7 +44,7 @@
     git add .
     
     // 提交暂存区到本地仓库，增加-s参数，自动签名
-    git commit -m -s "<your commit message>"
+    git commit -s -m "<your commit message>"
     ```
    其中，`<your commit message>`是您的提交信息，需要遵循以下命名规范：
    - feat: feature的缩写, 新的功能或特性

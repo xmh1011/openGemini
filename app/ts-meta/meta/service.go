@@ -174,6 +174,12 @@ func (s *Service) Open() error {
 	if err != nil {
 		return err
 	}
+	if s.raftAddr == "localhost:8088" {
+		s.RaftListener, err = net.Listen("tcp", s.raftAddr)
+		if err != nil {
+			return err
+		}
+	}
 
 	s.initStore(ar)
 	s.startMetaHTTPServer()
