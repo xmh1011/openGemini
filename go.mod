@@ -137,6 +137,7 @@ require (
 	github.com/smartystreets/assertions v1.2.0 // indirect
 	github.com/spf13/cast v1.4.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/stretchr/objx v0.4.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.9 // indirect
 	github.com/tklauser/numcpus v0.3.0 // indirect
 	github.com/uber/jaeger-client-go v2.28.0+incompatible // indirect

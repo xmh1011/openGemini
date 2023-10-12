@@ -18,9 +18,19 @@ package cmd
 
 import (
 	"fmt"
+	"runtime"
 
+	"github.com/openGemini/openGemini/app"
 	"github.com/spf13/cobra"
 )
+
+var (
+	TsVersion = "v1.1.0rc0"
+	TsCommit  string
+	TsBranch  string
+)
+
+const TsStore = "TsCli"
 
 func init() {
 	rootCmd.AddCommand(versionCmd)
@@ -28,11 +38,10 @@ func init() {
 
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Print the version of openGemini CLI",
-	Long: `The version of openGemini CLI. Higher
-version of openGemini CLI is compatible with lower
- version of open-Gemini.`,
+	Short: "Print the version of openGemini CLI.",
+	Long:  `The version of openGemini CLI. Higher version of openGemini CLI is compatible with lower version of open-Gemini.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("openGemini CLI v0.0.1 - HEAD")
+		fmt.Printf(app.VERSION, TsStore, TsVersion, TsBranch, TsCommit, runtime.GOOS, runtime.GOARCH)
 	},
 }
